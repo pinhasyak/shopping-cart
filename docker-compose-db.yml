@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  db-shopingcart:
+    image: postgres:12.5
+    restart: always
+    environment:
+      POSTGRES_USER: shoppingcart
+      POSTGRES_PASSWORD: shoppingcart
+    ports:
+      - 5432:5432
+    networks:
+      - network-shoppingcard
+    volumes:
+      - postgres-data-shoppingcard:/var/lib/postgresql/data
+      - ./user-manager-init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres-data-shoppingcard:
+networks:
+  network-shoppingcard:

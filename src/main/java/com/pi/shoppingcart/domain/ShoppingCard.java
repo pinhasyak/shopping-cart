@@ -1,15 +1,19 @@
 package com.pi.shoppingcart.domain;
 
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Book {
+@Accessors(chain = true)
+public class ShoppingCard {
 
     @Id
     @GeneratedValue
